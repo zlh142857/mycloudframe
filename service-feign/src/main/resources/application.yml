@@ -8,7 +8,7 @@ spring:
   application:
     name: service-feign
   thymeleaf:
-    prefix: classpath:/static/
+    prefix: classpath:/templates/
     suffix: .html
 feign:
   hystrix:
