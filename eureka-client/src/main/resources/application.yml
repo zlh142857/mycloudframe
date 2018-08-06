@@ -1,0 +1,21 @@
+server:
+  port: 8762
+  # 数据库基本配置
+spring:
+  application:
+    name: eureka-client
+  datasource:
+      url: jdbc:mysql://localhost:3306/yes
+      username: root
+      password: 142857
+      driver-class-name: com.mysql.jdbc.Driver
+  jpa:
+    database: MYSQL
+    show-sql: true
+  # 显示后台处理的SQL语句
+eureka:
+  client:
+    serviceUrl:
+      defaultZone: http://localhost:8761/eureka/
+
+
