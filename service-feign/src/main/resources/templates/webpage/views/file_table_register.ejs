@@ -1,0 +1,211 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <title>人员登记</title>
+    <!-- Tell the browser to be responsive to screen width -->
+    <meta content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no" name="viewport">
+    <!-- Pace -->
+    <link rel="stylesheet" href="../../plugins/pace-master/themes/blue/pace-theme-flash.css">
+    <link rel="stylesheet" href="../../p">
+    <script type="text/javascript" src="../../plugins/pace-master/pace.min.js"></script>
+    <link rel="stylesheet" href="../../bootstrap/css/bootstrap.min.css">
+    <link rel="stylesheet" href="../../dist/css/font-awesome.min.css">
+    <link rel="stylesheet" href="../../dist/css/ionicons.min.css">
+    <link rel="stylesheet" href="../../dist/css/AdminLTE.min.css">
+    <link rel="stylesheet" href="../../dist/css/skins/all-skins.min.css">
+    <link rel="stylesheet" href="../../dist/css/datepicker.css">
+    <link rel="stylesheet" href="../../dist/css/jquery-ui.css">
+    <!-- daterange picker -->
+    <link rel="stylesheet" href="../../bower_components/bootstrap-daterangepicker/daterangepicker.css">
+    <!-- bootstrap datepicker -->
+    <link rel="stylesheet" href="../../bower_components/bootstrap-datepicker/dist/css/bootstrap-datepicker.min.css">
+</head>
+
+<body class="hold-transition skin-blue sidebar-mini">
+
+    <!-- Content Header (Page header) -->
+    <section class="content-header">
+        <h1>
+            <small></small>
+        </h1>
+        <ol class="breadcrumb">
+            <li>
+                <a href="#">
+                    <i class="fa fa-dashboard"></i>设备管理</a>
+            </li>
+            <li>
+                <a href="#">设备登记</a>
+            </li>
+        </ol>
+    </section>
+
+    <!-- Main content -->
+    <section class="content">
+
+        <div class="box box-info">
+            <div class="box-header with-border">
+                <h3 class="box-title">
+                    <font style="vertical-align: inherit;">
+                        <font style="vertical-align: inherit;">添加文件表</font>
+                    </font>
+                </h3>
+            </div>
+            <!-- /.box-header -->
+            <!-- form start -->
+            <form action="#" class="form-horizontal" method="POST" style="width:1200px;margin:0 auto;">
+                <div class="box-body">
+                <div class="borders box box-default box-body" >  
+                    <div class="form-group col-md-12">
+                        <font style="vertical-align: inherit;font-size:18px;"><b>添加文件信息：</b></font>
+                    </div>
+
+                    <div class="form-group col-md-4">
+                        <label for="username" class="col-sm-4 control-label">
+                            <font style="vertical-align: inherit;">
+                                <font style="vertical-align: inherit;">序号：</font>
+                            </font>
+                        </label>
+                        <div class="col-sm-8">
+                            <input type="text" class="form-control" id="username" placeholder="请输入序号">
+                        </div>
+                    </div>
+                    
+                    <div class="form-group col-md-4">
+                        <label for="username" class="col-sm-4 control-label">
+                            <font style="vertical-align: inherit;">
+                                <font style="vertical-align: inherit;">发文单位：</font>
+                            </font>
+                        </label>
+                        <div class="col-sm-8">
+                            <input type="text" class="form-control" id="username" placeholder="请输入发文单位">
+                        </div>
+                    </div>
+
+                    <div class="form-group col-md-4">
+                        <label for="username" class="col-sm-4 control-label">
+                            <font style="vertical-align: inherit;">
+                                <font style="vertical-align: inherit;">年度：</font>
+                            </font>
+                        </label>
+                        <div class="col-sm-8">
+                            <input type="text" class="form-control" id="username" placeholder="请输入年度">
+                        </div>
+                    </div>
+
+                    <div class="form-group col-md-4">
+                        <label for="username" class="col-sm-4 control-label">
+                            <font style="vertical-align: inherit;">
+                                <font style="vertical-align: inherit;">发文日期：</font>
+                            </font>
+                        </label>
+                        <div class="col-sm-8">
+                            <input type="text" name="scheduledEndTime" class="form-control briths" id="scheduledEndTime" autocomplete="off"  placeholder="请输入日期">
+                        </div>
+                    </div>
+
+                    <div class="form-group col-md-4">
+                        <label for="username" class="col-sm-4 control-label">
+                            <font style="vertical-align: inherit;">
+                                <font style="vertical-align: inherit;">密级：</font>
+                            </font>
+                        </label>
+                        <div class="col-sm-8">
+                            <input type="file" class="form-control" id="username" placeholder="请输入密级">
+                        </div>
+                    </div>
+
+                    <div class="form-group col-md-4">
+                        <label for="username" class="col-sm-4 control-label">
+                            <font style="vertical-align: inherit;">
+                                <font style="vertical-align: inherit;">页数：</font>
+                            </font>
+                        </label>
+                        <div class="col-sm-8">
+                            <input type="text" class="form-control" id="username" placeholder="请输入页数">
+                        </div>
+                    </div>
+
+                    <div class="form-group col-md-4">
+                        <label for="username" class="col-sm-4 control-label">
+                            <font style="vertical-align: inherit;">
+                                <font style="vertical-align: inherit;">标题：</font>
+                            </font>
+                        </label>
+                        <div class="col-sm-8">
+                            <input type="text" class="form-control" id="username" placeholder="请输入标题">
+                        </div>
+                    </div>
+
+                    <div class="form-group col-md-4">
+                        <label for="username" class="col-sm-4 control-label">
+                            <font style="vertical-align: inherit;">
+                                <font style="vertical-align: inherit;">是否原件：</font>
+                            </font>
+                        </label>
+                        <div class="col-sm-8">
+                             <select class="form-control select2 select2-hidden-accessible">
+                                <option value="">是</option>
+                                <option value="">否</option>
+                            </select>
+                        </div>
+                    </div>
+                     
+                    <div class="form-group col-md-4">
+                        <label for="username" class="col-sm-4 control-label">
+                            <font style="vertical-align: inherit;">
+                                <font style="vertical-align: inherit;">份数：</font>
+                            </font>
+                        </label>
+                        <div class="col-sm-8">
+                            <input type="text" class="form-control" id="username" placeholder="请输入份数">
+                        </div>
+                    </div>
+
+                  </div>                  
+                </div>
+                <!-- /.box-body -->
+                <div class="box-footer" style="text-align:center;">
+                    <button type="button" class="btn btn-default ">
+                        <font style="vertical-align: inherit;">
+                            <font style="vertical-align: inherit;">取消</font>
+                        </font>
+                    </button>
+                    <button type="submit" class="btn btn-info">
+                        <font style="vertical-align: inherit;">
+                            <font style="vertical-align: inherit;">保存</font>
+                        </font>
+                    </button>
+                </div>
+                <!-- /.box-footer -->
+            </form>
+        </div>
+
+    </section>
+    <script src="../../plugins/jQuery/jquery-2.2.3.min.js"></script>
+    <script src="../../bootstrap/js/bootstrap.min.js"></script>
+    <script src="../../plugins/fastclick/fastclick.js"></script>
+    <script src="../../dist/js/app.min.js"></script>
+    <script src="../../dist/js/demo.js"></script>
+<!-- date-range-picker -->
+    <script src="../../bower_components/moment/min/moment.min.js"></script>
+    <script src="../../bower_components/bootstrap-daterangepicker/daterangepicker.js"></script>
+    <!-- bootstrap datepicker -->
+    <script src="../../bower_components/bootstrap-datepicker/dist/js/bootstrap-datepicker.js"></script>
+    <script src="../../bower_components/jquery-ui/ui/i18n/datepicker-zh-CN.js"></script>
+    <script src="../public/js/dates.js"></script>
+</body>
+<script>
+
+$(function () {
+    $('.briths').datepicker({
+        autoclose: true,
+        dateFormat: "dd-mm-yy",
+    })
+})
+
+
+</script>
+</html>
