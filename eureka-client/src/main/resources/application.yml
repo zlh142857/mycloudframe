@@ -12,6 +12,10 @@ spring:
   jpa:
     database: MYSQL
     show-sql: true
+  servlet:
+    multipart:
+      max-file-size: 1024Mb
+      max-request-size: 10240Mb
   # 显示后台处理的SQL语句
 eureka:
   client:

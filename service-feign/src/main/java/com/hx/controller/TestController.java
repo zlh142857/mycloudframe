@@ -28,4 +28,12 @@ public class TestController {
 
         return "/index";
     }
+    /*  http:
+    multipart:
+      enabled: true
+      file-size-threshold: 0
+      location: D:\image
+      max-file-size: 10240Mb
+      max-request-size: 102400Mb
+    * */
 }

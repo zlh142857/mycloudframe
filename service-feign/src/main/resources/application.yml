@@ -7,10 +7,17 @@ server:
 spring:
   application:
     name: service-feign
-  thymeleaf:
-    prefix: classpath:/templates/
-    suffix: .html
+  resources:
+      static-locations: classpath:/templates/webpage/views/
+  http:
+    multipart:
+      enabled: true
+      file-size-threshold: 0
+      location:
+      max-file-size: 10240Mb
+      max-request-size: 102400Mb
 feign:
   hystrix:
     enabled: true
+
 
