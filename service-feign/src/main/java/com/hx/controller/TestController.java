@@ -2,15 +2,18 @@ package com.hx.controller;
 
 
 import com.alibaba.fastjson.JSONObject;
+import com.hx.config.FileUtil;
 import com.hx.service.SchedualServiceHi;
 
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
-import org.springframework.web.bind.annotation.RequestMapping;
-import org.springframework.web.bind.annotation.RequestParam;
+import org.springframework.web.bind.annotation.*;
+import org.springframework.web.multipart.MultipartFile;
+
+import javax.servlet.http.HttpServletRequest;
 
 
-@Controller
+@RestController
 public class TestController {
     @Autowired
     SchedualServiceHi schedualServiceHi;
@@ -28,12 +31,18 @@ public class TestController {
 
         return "/index";
     }
-    /*  http:
-    multipart:
-      enabled: true
-      file-size-threshold: 0
-      location: D:\image
-      max-file-size: 10240Mb
-      max-request-size: 102400Mb
-    * */
+    //处理文件上传
+    @RequestMapping(value="/uploadimg", method = RequestMethod.POST)
+    public String uploadImg(@RequestParam("file") MultipartFile file,
+                     HttpServletRequest request) {
+        String contentType = file.getContentType();
+        String fileName = file.getOriginalFilename();
+        try {
+            FileUtil.uploadFile(file.getBytes(), fileName);
+        } catch (Exception e) {
+            // TODO: handle exception
+        }
+        //返回json
+        return "uploadimg success";
+    }
 }

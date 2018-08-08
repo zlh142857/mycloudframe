@@ -23,7 +23,7 @@ public class Thesescretequipment implements Serializable {
     @Column(name="Course_DeviceLocation")
     private String courseDeviceLocation;  //设备位置
     @Column(name="Course_Accessory")
-    private File courseAccessory;  //附件
+    private String courseAccessory;  //附件
     @Column(name="Course_Remark")
     private String courseRemark;  //备注
 
@@ -67,11 +67,11 @@ public class Thesescretequipment implements Serializable {
         this.courseDeviceLocation = courseDeviceLocation;
     }
 
-    public File getCourseAccessory() {
+    public String getCourseAccessory() {
         return courseAccessory;
     }
 
-    public void setCourseAccessory(File courseAccessory) {
+    public void setCourseAccessory(String courseAccessory) {
         this.courseAccessory = courseAccessory;
     }
 

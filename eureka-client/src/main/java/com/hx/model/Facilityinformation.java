@@ -23,7 +23,7 @@ public class Facilityinformation implements Serializable {
     @Column(name="Facility_DeviceLocation")
     private String facilityDeviceLocation;  //设备位置
     @Column(name="Facility_Accessory")
-    private File facilityAccessory;  //附件
+    private String facilityAccessory;  //附件
     @Column(name="Facility_Remark")
     private String facilityRemark;  //备注
 
@@ -67,11 +67,11 @@ public class Facilityinformation implements Serializable {
         this.facilityDeviceLocation = facilityDeviceLocation;
     }
 
-    public File getFacilityAccessory() {
+    public String getFacilityAccessory() {
         return facilityAccessory;
     }
 
-    public void setFacilityAccessory(File facilityAccessory) {
+    public void setFacilityAccessory(String facilityAccessory) {
         this.facilityAccessory = facilityAccessory;
     }
 
