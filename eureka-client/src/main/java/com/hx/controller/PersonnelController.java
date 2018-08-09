@@ -31,7 +31,7 @@ public class PersonnelController {
         return callback +"(新增失败)";
     }
     //查询,分页
-    @RequestMapping(value="/selectPersonnel",method=RequestMethod.POST)
+    @RequestMapping(value="/selectPersonnel")
     public String selectPersonnel(String callback,Integer pageStart,Integer pageSize) throws Exception {
         List<Personnel> list=personnerService.selectPersonner(pageStart,pageSize);
         String json=JSONObject.toJSONStringWithDateFormat(list,"yyyy-MM-dd");

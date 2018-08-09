@@ -34,15 +34,16 @@ public class TestController {
     //处理文件上传
     @RequestMapping(value="/uploadimg", method = RequestMethod.POST)
     public String uploadImg(@RequestParam("file") MultipartFile file,
-                     HttpServletRequest request) {
+                     HttpServletRequest request,String callback) {
         String contentType = file.getContentType();
         String fileName = file.getOriginalFilename();
         try {
-            FileUtil.uploadFile(file.getBytes(), fileName);
+            String filePath=FileUtil.uploadFile(file.getBytes(), fileName);
+            //返回json
+            return callback+"("+filePath+")";
         } catch (Exception e) {
             // TODO: handle exception
         }
-        //返回json
-        return "uploadimg success";
+        return callback+"upload fail";
     }
 }
