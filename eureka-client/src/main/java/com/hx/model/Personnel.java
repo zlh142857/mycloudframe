@@ -5,13 +5,13 @@ import java.io.Serializable;
 
 /*人员登记表*/
 @Entity
-@Table(name="personner")
-public class Personner implements Serializable {
+@Table(name="personnel")
+public class Personnel implements Serializable {
 
-    private static final long serialVersionUID = 1479930720432309715L;
+    private static final long serialVersionUID = 4357246868390365804L;
     @Id
-    @GeneratedValue(strategy = GenerationType.IDENTITY) //主键生成策略
-    @Column(name="User_Id")
+    @GeneratedValue(strategy = GenerationType.IDENTITY)
+    @Column(name = "User_Id", nullable = false)
     private Integer userId;  //id
     @Column(name="User_Name")
     private String userName; //姓名
@@ -27,25 +27,25 @@ public class Personner implements Serializable {
     private String userHealth;  //健康状况
     @Column(name="User_Birthday")
     private String userBirthday;  //出生日期
-    @Column(name="User_PartyTime")
+    @Column(name="User_Party_Time")
     private String userPartyTime;  //入党时间
-    @Column(name="User_TimeToWork")
+    @Column(name="User_Time_To_Work")
     private String userTimeToWork;  //参加工作时间
     @Column(name="User_Education")
     private String userEducation;  //学历
-    @Column(name="User_SchoolTag")
+    @Column(name="User_School_Tag")
     private String userSchoolTag;  //毕业学校
     @Column(name="User_Biye")
     private String userBiye;  //毕业专业
-    @Column(name="User_FamilyName")
+    @Column(name="User_Family_Name")
     private String userFamilyName;  //亲属姓名
-    @Column(name="User_TypeOfKinship")
+    @Column(name="User_Type_Of_Kinship")
     private String userTypeOfKinship;  //亲属关系
     @Column(name="User_Contact")
     private String userContact;  //联系方式
     @Column(name="User_Professional")
     private String userProfessional;  //亲属职业
-    @Column(name="User_TheNation")
+    @Column(name="User_The_Nation")
     private String userTheNation;  //亲属民族
 
     public Integer getUserId() {
@@ -194,7 +194,7 @@ public class Personner implements Serializable {
 
     @Override
     public String toString() {
-        return "Personner{" +
+        return "Personnel{" +
                 "userId=" + userId +
                 ", userName='" + userName + '\'' +
                 ", userSex='" + userSex + '\'' +
