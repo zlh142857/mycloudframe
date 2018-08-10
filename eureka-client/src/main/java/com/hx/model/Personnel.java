@@ -1,7 +1,10 @@
 package com.hx.model;
 
+import org.springframework.format.annotation.DateTimeFormat;
+
 import javax.persistence.*;
 import java.io.Serializable;
+import java.util.Date;
 
 /*人员登记表*/
 @Entity
@@ -25,11 +28,11 @@ public class Personnel implements Serializable {
     private String userNative;  //籍贯
     @Column(name="User_Health")
     private String userHealth;  //健康状况
-    @Column(name="User_Birthday")
+
     private String userBirthday;  //出生日期
-    @Column(name="User_Party_Time")
+
     private String userPartyTime;  //入党时间
-    @Column(name="User_Time_To_Work")
+
     private String userTimeToWork;  //参加工作时间
     @Column(name="User_Education")
     private String userEducation;  //学历
@@ -47,6 +50,19 @@ public class Personnel implements Serializable {
     private String userProfessional;  //亲属职业
     @Column(name="User_The_Nation")
     private String userTheNation;  //亲属民族
+    @Column(name="User_Birthday")
+    @DateTimeFormat(style = "yyyy-MM-dd")
+    private Date userBirthdayt;
+    @Column(name="User_Party_Time")
+    @DateTimeFormat(style = "yyyy-MM-dd")
+    private Date userPartyTimet;
+    @Column(name="User_Time_To_Work")
+    @DateTimeFormat(style = "yyyy-MM-dd")
+    private Date userTimeToWorkt;
+
+    public static long getSerialVersionUID() {
+        return serialVersionUID;
+    }
 
     public Integer getUserId() {
         return userId;
@@ -103,7 +119,7 @@ public class Personnel implements Serializable {
     public void setUserHealth(String userHealth) {
         this.userHealth = userHealth;
     }
-
+    @Transient
     public String getUserBirthday() {
         return userBirthday;
     }
@@ -111,7 +127,7 @@ public class Personnel implements Serializable {
     public void setUserBirthday(String userBirthday) {
         this.userBirthday = userBirthday;
     }
-
+    @Transient
     public String getUserPartyTime() {
         return userPartyTime;
     }
@@ -119,7 +135,7 @@ public class Personnel implements Serializable {
     public void setUserPartyTime(String userPartyTime) {
         this.userPartyTime = userPartyTime;
     }
-
+    @Transient
     public String getUserTimeToWork() {
         return userTimeToWork;
     }
@@ -192,6 +208,30 @@ public class Personnel implements Serializable {
         this.userTheNation = userTheNation;
     }
 
+    public Date getUserBirthdayt() {
+        return userBirthdayt;
+    }
+
+    public void setUserBirthdayt(Date userBirthdayt) {
+        this.userBirthdayt = userBirthdayt;
+    }
+
+    public Date getUserPartyTimet() {
+        return userPartyTimet;
+    }
+
+    public void setUserPartyTimet(Date userPartyTimet) {
+        this.userPartyTimet = userPartyTimet;
+    }
+
+    public Date getUserTimeToWorkt() {
+        return userTimeToWorkt;
+    }
+
+    public void setUserTimeToWorkt(Date userTimeToWorkt) {
+        this.userTimeToWorkt = userTimeToWorkt;
+    }
+
     @Override
     public String toString() {
         return "Personnel{" +
@@ -213,6 +253,9 @@ public class Personnel implements Serializable {
                 ", userContact='" + userContact + '\'' +
                 ", userProfessional='" + userProfessional + '\'' +
                 ", userTheNation='" + userTheNation + '\'' +
+                ", userBirthdayt=" + userBirthdayt +
+                ", userPartyTimet=" + userPartyTimet +
+                ", userTimeToWorkt=" + userTimeToWorkt +
                 '}';
     }
 }

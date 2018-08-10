@@ -6,6 +6,8 @@ import com.hx.service.PersonnelService;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
+import java.text.SimpleDateFormat;
+import java.util.Date;
 import java.util.List;
 
 @Service("personnerService")
@@ -42,6 +44,13 @@ public class PersonnelServiceImpl implements PersonnelService {
     @Override
     public String savePersonner(Personnel personnel) {
         try{
+            SimpleDateFormat sdf=new SimpleDateFormat("yyyy-MM-dd");
+            Date partytime=sdf.parse(personnel.getUserPartyTime());
+            Date birthday=sdf.parse(personnel.getUserBirthday());
+            Date towork=sdf.parse(personnel.getUserTimeToWork());
+            personnel.setUserBirthdayt(birthday);
+            personnel.setUserPartyTimet(partytime);
+            personnel.setUserTimeToWorkt(towork);
             Personnel per= personnelDao.save(personnel);
             if(per != null){
                 return "新增成功";

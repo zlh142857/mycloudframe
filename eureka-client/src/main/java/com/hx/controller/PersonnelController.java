@@ -16,9 +16,7 @@ public class PersonnelController {
     PersonnelService personnerService;
     //新增
     @RequestMapping(value="/savePersonnel")
-    public String savePersonnel(String callback){
-        Personnel personnel=new Personnel();
-        personnel.setUserName("力气");
+    public String savePersonnel(Personnel personnel,String callback){
         String str=personnerService.savePersonner(personnel);
         return callback +str;
     }
