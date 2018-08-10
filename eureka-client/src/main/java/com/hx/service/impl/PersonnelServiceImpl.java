@@ -14,28 +14,41 @@ public class PersonnelServiceImpl implements PersonnelService {
     PersonnelDao personnelDao;
 
     @Override
-    public Integer savePersonner(String userName,String userSex,String userKiev,String userNation,
-                                 String userNative,String userHealth,String userBirthday,String userPartyTime,
-                                 String userTimeToWork,String userEducation,
-                                 String userSchoolTag,String userBiye,String userFamilyName,
-                                 String userTypeOfKinship,String userContact,String userProfessional,
-                                 String userTheNation) throws Exception{
-        Integer count= personnelDao.savePersonner(userName,userSex,userKiev,userNation,userNative,
-                userHealth,userBirthday,userPartyTime,userTimeToWork,userEducation,userSchoolTag,
-                userBiye,userFamilyName,userTypeOfKinship,userContact,userProfessional,userTheNation);
-        return count;
-    }
-
-    @Override
-    public List<Personnel> selectPersonner(Integer pageStart, Integer pageSize) throws Exception{
-        List<Personnel> list=personnelDao.findPersonner(pageStart,pageSize);
+    public List<Personnel> selectPersonner(Integer pageStart, Integer pageSize){
+        List<Personnel> list=null;
+        try {
+            list=personnelDao.findPersonner(pageStart,pageSize);
+            return list;
+        }catch (Exception e){
+            System.out.println("查询失败");
+        }
         return list;
     }
 
 
     @Override
-    public Integer deletePersonner(Integer userId)throws Exception {
-        Integer count=personnelDao.deletePersonner(userId);
-        return count;
+    public String deletePersonner(Integer userId){
+        try {
+            Integer count=personnelDao.deletePersonner(userId);
+            if(count != 0){
+                return "删除成功";
+            }
+        }catch (Exception e){
+            System.out.println("删除失败");
+        }
+        return "删除失败";
+    }
+
+    @Override
+    public String savePersonner(Personnel personnel) {
+        try{
+            Personnel per= personnelDao.save(personnel);
+            if(per != null){
+                return "新增成功";
+            }
+        }catch (Exception e){
+            System.out.println("新增失败");
+        }
+        return "新增失败";
     }
 }

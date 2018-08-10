@@ -22,7 +22,7 @@ import java.io.FileOutputStream;
  */
 public class FileUtil {
     public static String uploadFile(byte[] file, String fileName) throws Exception {
-        String filePath="/usr/uploadImage";
+        String filePath="D://";///usr/uploadImage
         FileOutputStream out = new FileOutputStream(filePath+fileName);
         out.write(file);
         out.flush();
