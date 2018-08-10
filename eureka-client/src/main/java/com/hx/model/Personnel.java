@@ -29,11 +29,7 @@ public class Personnel implements Serializable {
     @Column(name="User_Health")
     private String userHealth;  //健康状况
 
-    private String userBirthday;  //出生日期
 
-    private String userPartyTime;  //入党时间
-
-    private String userTimeToWork;  //参加工作时间
     @Column(name="User_Education")
     private String userEducation;  //学历
     @Column(name="User_School_Tag")
@@ -60,9 +56,12 @@ public class Personnel implements Serializable {
     @DateTimeFormat(style = "yyyy-MM-dd")
     private Date userTimeToWorkt;
 
-    public static long getSerialVersionUID() {
-        return serialVersionUID;
-    }
+    @Transient
+    private String userBirthday;  //出生日期
+    @Transient
+    private String userPartyTime;  //入党时间
+    @Transient
+    private String userTimeToWork;  //参加工作时间
 
     public Integer getUserId() {
         return userId;
@@ -119,7 +118,7 @@ public class Personnel implements Serializable {
     public void setUserHealth(String userHealth) {
         this.userHealth = userHealth;
     }
-    @Transient
+
     public String getUserBirthday() {
         return userBirthday;
     }
@@ -127,7 +126,7 @@ public class Personnel implements Serializable {
     public void setUserBirthday(String userBirthday) {
         this.userBirthday = userBirthday;
     }
-    @Transient
+
     public String getUserPartyTime() {
         return userPartyTime;
     }
@@ -135,7 +134,7 @@ public class Personnel implements Serializable {
     public void setUserPartyTime(String userPartyTime) {
         this.userPartyTime = userPartyTime;
     }
-    @Transient
+
     public String getUserTimeToWork() {
         return userTimeToWork;
     }
