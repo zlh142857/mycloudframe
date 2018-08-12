@@ -1,7 +1,10 @@
 package com.hx.model;
 
+import org.springframework.format.annotation.DateTimeFormat;
+
 import javax.persistence.*;
 import java.io.Serializable;
+import java.util.Date;
 
 /*出入境人员管理表*/
 @Entity
@@ -17,18 +20,24 @@ public class Outbound implements Serializable {
     private String exitName; //姓名
     @Column(name="Exit_Section")  //部门
     private String exitSection;
-    @Column(name="Exit_ToTheCountry")
-    private String exitToTheCountry;//去往国家
+    @Column(name="Exit_Tothecountry")
+    private String exitTothecountry;//去往国家
     @Column(name="Exit_Reasons")
     private String exitReasons;  //事由
-    @Column(name="Exit_WhetherClassified")
-    private String exitWhetherClassified;  //是否涉密
-    @Column(name="Exit_ApprovalFlow")
-    private String exitApprovalFlow;  //审核
-    @Column(name="Exit_TogoabroadToDate")
-    private String exitTogoabroadToDate;  //出国日期
-    @Column(name="Exit_ReturnDate")
-    private String exitReturnDate;  //回国日期
+    @Column(name="Exit_Whetherclassified")
+    private String exitWhetherclassified;  //是否涉密
+    @Column(name="Exit_Approvalflow")
+    private String exitApprovalflow;  //审核
+    @Column(name="Exit_Togoabroadtodate")
+    @DateTimeFormat(style = "yyyy-MM-dd")
+    private Date exitTogoabroadtodatet;  //出国日期
+    @Column(name="Exit_Returndate")
+    @DateTimeFormat(style = "yyyy-MM-dd")
+    private Date exitReturndatet;  //回国日期
+    @Transient
+    private String exitReturndate;  //回国日期
+    @Transient
+    private String exitTogoabroadtodate;  //出国日期
 
     public Integer getExitId() {
         return exitId;
@@ -54,12 +63,12 @@ public class Outbound implements Serializable {
         this.exitSection = exitSection;
     }
 
-    public String getExitToTheCountry() {
-        return exitToTheCountry;
+    public String getExitTothecountry() {
+        return exitTothecountry;
     }
 
-    public void setExitToTheCountry(String exitToTheCountry) {
-        this.exitToTheCountry = exitToTheCountry;
+    public void setExitTothecountry(String exitTothecountry) {
+        this.exitTothecountry = exitTothecountry;
     }
 
     public String getExitReasons() {
@@ -70,36 +79,52 @@ public class Outbound implements Serializable {
         this.exitReasons = exitReasons;
     }
 
-    public String getExitWhetherClassified() {
-        return exitWhetherClassified;
+    public String getExitWhetherclassified() {
+        return exitWhetherclassified;
     }
 
-    public void setExitWhetherClassified(String exitWhetherClassified) {
-        this.exitWhetherClassified = exitWhetherClassified;
+    public void setExitWhetherclassified(String exitWhetherclassified) {
+        this.exitWhetherclassified = exitWhetherclassified;
     }
 
-    public String getExitApprovalFlow() {
-        return exitApprovalFlow;
+    public String getExitApprovalflow() {
+        return exitApprovalflow;
     }
 
-    public void setExitApprovalFlow(String exitApprovalFlow) {
-        this.exitApprovalFlow = exitApprovalFlow;
+    public void setExitApprovalflow(String exitApprovalflow) {
+        this.exitApprovalflow = exitApprovalflow;
     }
 
-    public String getExitTogoabroadToDate() {
-        return exitTogoabroadToDate;
+    public Date getExitTogoabroadtodatet() {
+        return exitTogoabroadtodatet;
     }
 
-    public void setExitTogoabroadToDate(String exitTogoabroadToDate) {
-        this.exitTogoabroadToDate = exitTogoabroadToDate;
+    public void setExitTogoabroadtodatet(Date exitTogoabroadtodatet) {
+        this.exitTogoabroadtodatet = exitTogoabroadtodatet;
     }
 
-    public String getExitReturnDate() {
-        return exitReturnDate;
+    public Date getExitReturndatet() {
+        return exitReturndatet;
     }
 
-    public void setExitReturnDate(String exitReturnDate) {
-        this.exitReturnDate = exitReturnDate;
+    public void setExitReturndatet(Date exitReturndatet) {
+        this.exitReturndatet = exitReturndatet;
+    }
+
+    public String getExitReturndate() {
+        return exitReturndate;
+    }
+
+    public void setExitReturndate(String exitReturndate) {
+        this.exitReturndate = exitReturndate;
+    }
+
+    public String getExitTogoabroadtodate() {
+        return exitTogoabroadtodate;
+    }
+
+    public void setExitTogoabroadtodate(String exitTogoabroadtodate) {
+        this.exitTogoabroadtodate = exitTogoabroadtodate;
     }
 
     @Override
@@ -108,12 +133,14 @@ public class Outbound implements Serializable {
                 "exitId=" + exitId +
                 ", exitName='" + exitName + '\'' +
                 ", exitSection='" + exitSection + '\'' +
-                ", exitToTheCountry='" + exitToTheCountry + '\'' +
+                ", exitTothecountry='" + exitTothecountry + '\'' +
                 ", exitReasons='" + exitReasons + '\'' +
-                ", exitWhetherClassified='" + exitWhetherClassified + '\'' +
-                ", exitApprovalFlow='" + exitApprovalFlow + '\'' +
-                ", exitTogoabroadToDate='" + exitTogoabroadToDate + '\'' +
-                ", exitReturnDate='" + exitReturnDate + '\'' +
+                ", exitWhetherclassified='" + exitWhetherclassified + '\'' +
+                ", exitApprovalflow='" + exitApprovalflow + '\'' +
+                ", exitTogoabroadtodatet=" + exitTogoabroadtodatet +
+                ", exitReturndatet=" + exitReturndatet +
+                ", exitReturndate='" + exitReturndate + '\'' +
+                ", exitTogoabroadtodate='" + exitTogoabroadtodate + '\'' +
                 '}';
     }
 }

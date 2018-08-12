@@ -14,14 +14,14 @@ public class Thesescretequipment implements Serializable {
     @GeneratedValue(strategy = GenerationType.IDENTITY) //主键生成策略
     @Column(name="Course_Id")
     private Integer courseId;  //序号
-    @Column(name="Course_ApplicationNetwork")
-    private String courseApplicationNetwork; //应用网络
+    @Column(name="Course_Applicationnetwork")
+    private String courseApplicationnetwork; //应用网络
     @Column(name="Course_Name")
     private String courseName; //设备名
     @Column(name="Course_Amount")
     private Integer courseAmount;  //数量
-    @Column(name="Course_DeviceLocation")
-    private String courseDeviceLocation;  //设备位置
+    @Column(name="Course_Devicelocation")
+    private String courseDevicelocation;  //设备位置
     @Column(name="Course_Accessory")
     private String courseAccessory;  //附件
     @Column(name="Course_Remark")
@@ -35,12 +35,12 @@ public class Thesescretequipment implements Serializable {
         this.courseId = courseId;
     }
 
-    public String getCourseApplicationNetwork() {
-        return courseApplicationNetwork;
+    public String getCourseApplicationnetwork() {
+        return courseApplicationnetwork;
     }
 
-    public void setCourseApplicationNetwork(String courseApplicationNetwork) {
-        this.courseApplicationNetwork = courseApplicationNetwork;
+    public void setCourseApplicationnetwork(String courseApplicationnetwork) {
+        this.courseApplicationnetwork = courseApplicationnetwork;
     }
 
     public String getCourseName() {
@@ -59,12 +59,12 @@ public class Thesescretequipment implements Serializable {
         this.courseAmount = courseAmount;
     }
 
-    public String getCourseDeviceLocation() {
-        return courseDeviceLocation;
+    public String getCourseDevicelocation() {
+        return courseDevicelocation;
     }
 
-    public void setCourseDeviceLocation(String courseDeviceLocation) {
-        this.courseDeviceLocation = courseDeviceLocation;
+    public void setCourseDevicelocation(String courseDevicelocation) {
+        this.courseDevicelocation = courseDevicelocation;
     }
 
     public String getCourseAccessory() {
@@ -87,11 +87,11 @@ public class Thesescretequipment implements Serializable {
     public String toString() {
         return "Thesescretequipment{" +
                 "courseId=" + courseId +
-                ", courseApplicationNetwork='" + courseApplicationNetwork + '\'' +
+                ", courseApplicationnetwork='" + courseApplicationnetwork + '\'' +
                 ", courseName='" + courseName + '\'' +
                 ", courseAmount=" + courseAmount +
-                ", courseDeviceLocation='" + courseDeviceLocation + '\'' +
-                ", courseAccessory=" + courseAccessory +
+                ", courseDevicelocation='" + courseDevicelocation + '\'' +
+                ", courseAccessory='" + courseAccessory + '\'' +
                 ", courseRemark='" + courseRemark + '\'' +
                 '}';
     }

@@ -1,7 +1,10 @@
 package com.hx.model;
 
+import org.springframework.format.annotation.DateTimeFormat;
+
 import javax.persistence.*;
 import java.io.Serializable;
+import java.util.Date;
 
 /*文件信息表*/
 @Entity
@@ -13,20 +16,23 @@ public class Filenfo implements Serializable {
     @GeneratedValue(strategy = GenerationType.IDENTITY) //主键生成策略
     @Column(name="File_Id")
     private Integer fileId;  //序号
-    @Column(name="File_TheUnits")
-    private String fileTheUnits; //发文单位
+    @Column(name="File_Theunits")
+    private String fileTheunits; //发文单位
     @Column(name="File_year")
     private String fileyear;  //年度
-    @Column(name="File_DateOfDispatch")
-    private String fileDateOfDispatch;  //发文日期
+    @Column(name="File_Dateofdispatch")
+    @DateTimeFormat(style = "yyyy-MM-dd")
+    private Date fileDateofdispatcht;  //发文日期
     @Column(name="File_Securitylevel")
     private String fileSecuritylevel;  //密级
     @Column(name="File_Pages")
     private String filePages;  //页数
     @Column(name="File_Headline")
     private String fileHeadline;  //标题
-    @Column(name="File_MasterCopy")
-    private String fileMasterCopy;  //是否原件
+    @Column(name="File_Mastercopy")
+    private String fileMastercopy;  //是否原件
+    @Transient
+    private String fileDateofdispatch;  //发文日期
 
     public Integer getFileId() {
         return fileId;
@@ -36,12 +42,12 @@ public class Filenfo implements Serializable {
         this.fileId = fileId;
     }
 
-    public String getFileTheUnits() {
-        return fileTheUnits;
+    public String getFileTheunits() {
+        return fileTheunits;
     }
 
-    public void setFileTheUnits(String fileTheUnits) {
-        this.fileTheUnits = fileTheUnits;
+    public void setFileTheunits(String fileTheunits) {
+        this.fileTheunits = fileTheunits;
     }
 
     public String getFileyear() {
@@ -52,12 +58,12 @@ public class Filenfo implements Serializable {
         this.fileyear = fileyear;
     }
 
-    public String getFileDateOfDispatch() {
-        return fileDateOfDispatch;
+    public Date getFileDateofdispatcht() {
+        return fileDateofdispatcht;
     }
 
-    public void setFileDateOfDispatch(String fileDateOfDispatch) {
-        this.fileDateOfDispatch = fileDateOfDispatch;
+    public void setFileDateofdispatcht(Date fileDateofdispatcht) {
+        this.fileDateofdispatcht = fileDateofdispatcht;
     }
 
     public String getFileSecuritylevel() {
@@ -84,25 +90,34 @@ public class Filenfo implements Serializable {
         this.fileHeadline = fileHeadline;
     }
 
-    public String getFileMasterCopy() {
-        return fileMasterCopy;
+    public String getFileMastercopy() {
+        return fileMastercopy;
     }
 
-    public void setFileMasterCopy(String fileMasterCopy) {
-        this.fileMasterCopy = fileMasterCopy;
+    public void setFileMastercopy(String fileMastercopy) {
+        this.fileMastercopy = fileMastercopy;
+    }
+
+    public String getFileDateofdispatch() {
+        return fileDateofdispatch;
+    }
+
+    public void setFileDateofdispatch(String fileDateofdispatch) {
+        this.fileDateofdispatch = fileDateofdispatch;
     }
 
     @Override
     public String toString() {
         return "Filenfo{" +
                 "fileId=" + fileId +
-                ", fileTheUnits='" + fileTheUnits + '\'' +
+                ", fileTheunits='" + fileTheunits + '\'' +
                 ", fileyear='" + fileyear + '\'' +
-                ", fileDateOfDispatch='" + fileDateOfDispatch + '\'' +
+                ", fileDateofdispatcht=" + fileDateofdispatcht +
                 ", fileSecuritylevel='" + fileSecuritylevel + '\'' +
                 ", filePages='" + filePages + '\'' +
                 ", fileHeadline='" + fileHeadline + '\'' +
-                ", fileMasterCopy='" + fileMasterCopy + '\'' +
+                ", fileMastercopy='" + fileMastercopy + '\'' +
+                ", fileDateofdispatch='" + fileDateofdispatch + '\'' +
                 '}';
     }
 }

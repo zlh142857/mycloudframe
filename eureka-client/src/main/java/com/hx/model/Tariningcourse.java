@@ -1,7 +1,10 @@
 package com.hx.model;
 
+import org.springframework.format.annotation.DateTimeFormat;
+
 import javax.persistence.*;
 import java.io.Serializable;
+import java.util.Date;
 
 /*培训课程管理表*/
 @Entity
@@ -16,13 +19,16 @@ public class Tariningcourse implements Serializable {
     @Column(name="Course_Name")
     private String courseName; //应用网络
     @Column(name="Course_Duration")
-    private String courseDuration; //课程时长
+    @DateTimeFormat(style = "yyyy-MM-dd")
+    private Date courseDurationt; //课程时长
     @Column(name="Course_Site")
     private String courseSite; //课程场地
     @Column(name="Course_Lecturer")
     private String courseLecturer;  //讲师
     @Column(name="Course_Remark")
     private String courseRemark;  //备注
+    @Transient
+    private String courseDuration; //课程时长
 
     public Integer getCourseId() {
         return courseId;
@@ -40,12 +46,12 @@ public class Tariningcourse implements Serializable {
         this.courseName = courseName;
     }
 
-    public String getCourseDuration() {
-        return courseDuration;
+    public Date getCourseDurationt() {
+        return courseDurationt;
     }
 
-    public void setCourseDuration(String courseDuration) {
-        this.courseDuration = courseDuration;
+    public void setCourseDurationt(Date courseDurationt) {
+        this.courseDurationt = courseDurationt;
     }
 
     public String getCourseSite() {
@@ -72,15 +78,24 @@ public class Tariningcourse implements Serializable {
         this.courseRemark = courseRemark;
     }
 
+    public String getCourseDuration() {
+        return courseDuration;
+    }
+
+    public void setCourseDuration(String courseDuration) {
+        this.courseDuration = courseDuration;
+    }
+
     @Override
     public String toString() {
         return "Tariningcourse{" +
                 "courseId=" + courseId +
                 ", courseName='" + courseName + '\'' +
-                ", courseDuration='" + courseDuration + '\'' +
+                ", courseDurationt=" + courseDurationt +
                 ", courseSite='" + courseSite + '\'' +
                 ", courseLecturer='" + courseLecturer + '\'' +
                 ", courseRemark='" + courseRemark + '\'' +
+                ", courseDuration='" + courseDuration + '\'' +
                 '}';
     }
 }
