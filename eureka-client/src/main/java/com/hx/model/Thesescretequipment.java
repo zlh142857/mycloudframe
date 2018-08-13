@@ -14,7 +14,7 @@ public class Thesescretequipment implements Serializable {
     @GeneratedValue(strategy = GenerationType.IDENTITY) //主键生成策略
     @Column(name="Course_Id")
     private Integer courseId;  //序号
-    @Column(name="Course_Applicationnetwork")
+    @Column(name="Course_ApplicationNetwork")
     private String courseApplicationnetwork; //应用网络
     @Column(name="Course_Name")
     private String courseName; //设备名

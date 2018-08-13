@@ -25,12 +25,13 @@ public class PersonnelController {
     public String selectPersonnel(String callback,Integer pageStart,Integer pageSize) {
         List<Personnel> list=personnerService.selectPersonner(pageStart,pageSize);
         String json=JSONObject.toJSONStringWithDateFormat(list,"yyyy-MM-dd");
-        return callback +json;
+        return json;
     }
     //根据id删除
     @RequestMapping(value="/deletePersonnel")
     public String deletePersonnel(Integer userId, String callback){
         String str=personnerService.deletePersonner(userId);
+        System.out.println(callback+str);
         return callback +str;
     }
 }

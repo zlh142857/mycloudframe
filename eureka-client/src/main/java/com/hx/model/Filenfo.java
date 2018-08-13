@@ -16,11 +16,11 @@ public class Filenfo implements Serializable {
     @GeneratedValue(strategy = GenerationType.IDENTITY) //主键生成策略
     @Column(name="File_Id")
     private Integer fileId;  //序号
-    @Column(name="File_Theunits")
+    @Column(name="File_TheUnits")
     private String fileTheunits; //发文单位
     @Column(name="File_year")
     private String fileyear;  //年度
-    @Column(name="File_Dateofdispatch")
+    @Column(name="File_DateOfDispatch")
     @DateTimeFormat(style = "yyyy-MM-dd")
     private Date fileDateofdispatcht;  //发文日期
     @Column(name="File_Securitylevel")
@@ -29,7 +29,7 @@ public class Filenfo implements Serializable {
     private String filePages;  //页数
     @Column(name="File_Headline")
     private String fileHeadline;  //标题
-    @Column(name="File_Mastercopy")
+    @Column(name="File_MasterCopy")
     private String fileMastercopy;  //是否原件
     @Transient
     private String fileDateofdispatch;  //发文日期
