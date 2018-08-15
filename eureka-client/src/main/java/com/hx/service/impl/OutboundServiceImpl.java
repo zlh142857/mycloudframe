@@ -38,14 +38,18 @@ public class OutboundServiceImpl implements OutboundService{
     @Override
     public String saveOutbound(Outbound outbound) {
         try{
-            SimpleDateFormat sdf=new SimpleDateFormat("yyyy-MM-dd");
+            SimpleDateFormat sdf=new SimpleDateFormat("yyyy/MM/dd");
             Date returndate=sdf.parse(outbound.getExitReturndate());
             Date togo=sdf.parse(outbound.getExitTogoabroadtodate());
             outbound.setExitReturndatet(returndate);
             outbound.setExitTogoabroadtodatet(togo);
-            Outbound out=outboundDao.save(outbound);
-            if(out != null){
-                return "新增成功";
+            if(outbound != null){
+                Outbound out=outboundDao.save(outbound);
+                if(out != null){
+                    return "新增成功";
+                }
+            }else{
+                return "没有把值传到后台";
             }
         }catch (Exception e){
             System.out.println("新增失败");

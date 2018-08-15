@@ -19,7 +19,7 @@ public class Tariningcourse implements Serializable {
     @Column(name="Course_Name")
     private String courseName; //应用网络
     @Column(name="Course_Duration")
-    @DateTimeFormat(style = "yyyy-MM-dd")
+    @DateTimeFormat(style = "yyyy/MM/dd HH:mm:ss")
     private Date courseDurationt; //课程时长
     @Column(name="Course_Site")
     private String courseSite; //课程场地

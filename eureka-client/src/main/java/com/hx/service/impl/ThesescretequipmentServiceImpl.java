@@ -38,9 +38,13 @@ public class ThesescretequipmentServiceImpl implements ThesescretequipmentServic
     @Override
     public String saveThesescretequipment(Thesescretequipment thesescretequipment) {
         try{
-            Thesescretequipment the=thesescretequipmentDao.save(thesescretequipment);
-            if(the != null){
-                return "新增成功";
+            if(thesescretequipment != null){
+                Thesescretequipment the=thesescretequipmentDao.save(thesescretequipment);
+                if(the != null){
+                    return "新增成功";
+                }
+            }else{
+                return "没有把值传到后台";
             }
         }catch (Exception e){
             System.out.println("新增失败");

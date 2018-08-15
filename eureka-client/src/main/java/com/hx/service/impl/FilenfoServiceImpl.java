@@ -38,7 +38,7 @@ public class FilenfoServiceImpl implements FilenfoService{
     @Override
     public String saveFilenfo(Filenfo filenfo) {
         try{
-            SimpleDateFormat sdf=new SimpleDateFormat("yyyy-MM-dd");
+            SimpleDateFormat sdf=new SimpleDateFormat("yyyy/MM/dd");
             Date filedate=sdf.parse(filenfo.getFileDateofdispatch());
             filenfo.setFileDateofdispatcht(filedate);
             Filenfo file=filenfoDao.save(filenfo);

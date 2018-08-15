@@ -12,6 +12,7 @@ package com.hx.service.impl;
 
 import com.hx.dao.OutboundDao;
 import com.hx.dao.TariningcourseDao;
+import com.hx.model.Filenfo;
 import com.hx.model.Outbound;
 import com.hx.model.Tariningcourse;
 import com.hx.service.TariningcourseService;
@@ -38,12 +39,16 @@ public class TariningcourseServiceImpl implements TariningcourseService{
     @Override
     public String saveTariningcourse(Tariningcourse tariningcourse) {
         try{
-            SimpleDateFormat sdf=new SimpleDateFormat("yyyy-MM-dd");
+            SimpleDateFormat sdf=new SimpleDateFormat("yyyy/MM/dd HH:mm:ss");
             Date dura=sdf.parse(tariningcourse.getCourseDuration());
             tariningcourse.setCourseDurationt(dura);
-            Tariningcourse tar=tariningcourseDao.save(tariningcourse);
-            if(tar != null){
-                return "新增成功";
+            if(tariningcourse != null){
+                Tariningcourse tar=tariningcourseDao.save(tariningcourse);
+                if(tar != null){
+                    return "新增成功";
+                }
+            }else{
+                return "没有把值传到后台";
             }
         }catch (Exception e){
             System.out.println("新增失败");

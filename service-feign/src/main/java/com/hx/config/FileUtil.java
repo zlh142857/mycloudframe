@@ -23,11 +23,11 @@ import java.io.FileOutputStream;
  */
 public class FileUtil {
     public static String uploadFile(byte[] file, String fileName) throws Exception {
-        String filePath="/usr/uploadImage";
+        String filePath="D:\\imageTest";///usr/uploadImage
         FileOutputStream out = new FileOutputStream(filePath+fileName);
         out.write(file);
         out.flush();
         out.close();
-        return filePath+fileName;
+        return fileName;
     }
 }

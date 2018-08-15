@@ -47,13 +47,13 @@ public class Personnel implements Serializable {
     @Column(name="User_The_Nation")
     private String userTheNation;  //亲属民族
     @Column(name="User_Birthday")
-    @DateTimeFormat(style = "yyyy-MM-dd")
+    @DateTimeFormat(style = "yyyy/MM/dd")
     private Date userBirthdayt;
     @Column(name="User_Party_Time")
-    @DateTimeFormat(style = "yyyy-MM-dd")
+    @DateTimeFormat(style = "yyyy/MM/dd")
     private Date userPartyTimet;
     @Column(name="User_Time_To_Work")
-    @DateTimeFormat(style = "yyyy-MM-dd")
+    @DateTimeFormat(style = "yyyy/MM/dd")
     private Date userTimeToWorkt;
 
     @Transient

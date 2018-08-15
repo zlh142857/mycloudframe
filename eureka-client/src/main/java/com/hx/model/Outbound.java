@@ -29,10 +29,10 @@ public class Outbound implements Serializable {
     @Column(name="Exit_ApprovalFlow")
     private String exitApprovalflow;  //审核
     @Column(name="Exit_TogoabroadToDate")
-    @DateTimeFormat(style = "yyyy-MM-dd")
+    @DateTimeFormat(style = "yyyy/MM/dd")
     private Date exitTogoabroadtodatet;  //出国日期
     @Column(name="Exit_ReturnDate")
-    @DateTimeFormat(style = "yyyy-MM-dd")
+    @DateTimeFormat(style = "yyyy/MM/dd")
     private Date exitReturndatet;  //回国日期
     @Transient
     private String exitReturndate;  //回国日期

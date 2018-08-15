@@ -21,7 +21,7 @@ public class Filenfo implements Serializable {
     @Column(name="File_year")
     private String fileyear;  //年度
     @Column(name="File_DateOfDispatch")
-    @DateTimeFormat(style = "yyyy-MM-dd")
+    @DateTimeFormat(style = "yyyy/MM/dd")
     private Date fileDateofdispatcht;  //发文日期
     @Column(name="File_Securitylevel")
     private String fileSecuritylevel;  //密级

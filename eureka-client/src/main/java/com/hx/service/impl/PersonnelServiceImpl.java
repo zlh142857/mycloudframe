@@ -44,17 +44,22 @@ public class PersonnelServiceImpl implements PersonnelService {
     @Override
     public String savePersonner(Personnel personnel) {
         try{
-            SimpleDateFormat sdf=new SimpleDateFormat("yyyy-MM-dd");
+            SimpleDateFormat sdf=new SimpleDateFormat("yyyy/MM/dd");
             Date partytime=sdf.parse(personnel.getUserPartyTime());
             Date birthday=sdf.parse(personnel.getUserBirthday());
             Date towork=sdf.parse(personnel.getUserTimeToWork());
             personnel.setUserBirthdayt(birthday);
             personnel.setUserPartyTimet(partytime);
             personnel.setUserTimeToWorkt(towork);
-            Personnel per= personnelDao.save(personnel);
-            if(per != null){
-                return "新增成功";
+            if(personnel != null){
+                Personnel per= personnelDao.save(personnel);
+                if(per != null){
+                    return "新增成功";
+                }
+            }else{
+                return "没传过来数据";
             }
+
         }catch (Exception e){
             System.out.println("新增失败");
         }

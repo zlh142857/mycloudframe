@@ -13,6 +13,7 @@ package com.hx.service.impl;
 import com.hx.dao.FacilityinformationDao;
 import com.hx.dao.PersonnelDao;
 import com.hx.model.Facilityinformation;
+import com.hx.model.Outbound;
 import com.hx.model.Personnel;
 import com.hx.service.FacilityinformationService;
 import org.springframework.beans.factory.annotation.Autowired;
@@ -37,9 +38,13 @@ public class FacilityinformationServiceImpl implements FacilityinformationServic
     @Override
     public String saveFacility(Facilityinformation facilityinformation) {
         try{
-            Facilityinformation fac=facilityinformationDao.save(facilityinformation);
-            if(fac != null){
-                return "新增成功";
+            if(facilityinformation != null){
+                Facilityinformation fac=facilityinformationDao.save(facilityinformation);
+                if(fac != null){
+                    return "新增成功";
+                }
+            }else{
+                return "没有把值传到后台";
             }
         }catch (Exception e){
             System.out.println("新增失败");
