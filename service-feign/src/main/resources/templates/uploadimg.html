@@ -10,5 +10,18 @@
     <input type="submit" value="上传"/>
     <!--<img src= "http://localhost:8763/showImage?filename=test.jpg" />-->
 </form>
+<input type="button" value="模拟发送带cookie的请求" onclick="clickAjax()">
 </body>
+<script>
+
+
+    function clickAjax(){
+        document.cookie="UserIP=10.0.12.12"
+        document.cookie="UserProperty=VXNlcklkPVUxMUB6b25nYnUud3VqaW5nLmNufFVJX05BTUU9suLK1NPDu6czfFVJX0NFUlRJRD0zMzN8YWdlPTMwfGxldmVsPb/GvLZ8YXBwPUExQGJqLmNvbSxBMkBiai5jb20*"
+
+    }
+
+
+
+</script>
 </html>

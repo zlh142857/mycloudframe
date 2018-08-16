@@ -1,6 +1,7 @@
 package com.hx.config;
 
 import org.springframework.web.bind.annotation.RequestMapping;
+import org.springframework.web.bind.annotation.ResponseBody;
 import org.springframework.web.bind.annotation.RestController;
 
 import javax.servlet.http.Cookie;
@@ -39,17 +40,25 @@ public class HttpPostKey {
     }
     @RequestMapping("/base")
     public void base(HttpServletRequest request, HttpServletResponse response) throws UnsupportedEncodingException {
-        // 获取cookie信息
-       /* Cookie[] cookies = request.getCookies();
-        int size=cookies.length;
-        for (int i = 0; i < size; i++) {
-            System.out.println("cookies+++++++++++++++++"+cookies[i].toString());
-            System.out.println(cookies[i].getName() + ":" + cookies[i].getValue());
-            *//*Base64.Decoder decoder = Base64.getDecoder();
-            System.out.println("name+++++"+new String(decoder.decode(cookies[i].getName()), "gbk"));
-            System.out.println("name+++++"+new String(decoder.decode(cookies[i].getValue()), "gbk"));*//*
+
+        Cookie[] cookie = request.getCookies();
+        for (int i = 0; i < cookie.length; i++) {
+            Cookie cook = cookie[i];
+            if(cook.getName().equalsIgnoreCase("UserIP")){ //获取键
+                System.out.println(cook.getValue().toString());    //获取值
+            }
+            if(cook.getName().equalsIgnoreCase("UserProperty")){
+                String str=cook.getValue();//获取键
+                System.out.println(str);    //获取值
+                String str1=str.replace("*","=");
+                System.out.println(str1);
+                Base64.Decoder decoder = Base64.getDecoder();
+                System.out.println(new String(decoder.decode(str1), "gbk"));
+            }
         }
-        System.out.println(cookies.toString());*/
+
+
+
 
         /*Base64.Decoder decoder = Base64.getDecoder();
         String str="VXNlcklkPVUxMUB6b25nYnUud3VqaW5nLmNufFVJX05BTUU9suLK1NPDu6czfFVJX0NFUlRJRD0zMzN8YWdlPTMwfGxldmVsPb/GvLZ8YXBwPUExQGJqLmNvbSxBMkBiai5jb20*";
