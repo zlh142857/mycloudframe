@@ -35,21 +35,25 @@ public class FacilityinformationController {
     FacilityinformationService facilityinformationService;
     //新增
     @RequestMapping(value="/saveFacility")
-    public String saveFacility(Facilityinformation facilityinformation, String callback){
+    public String saveFacility(Facilityinformation facilityinformation){
         String str=facilityinformationService.saveFacility(facilityinformation);
-        return callback +str;
+        JSONObject json = new JSONObject();
+        json.put("str", str);
+        return "successCallBack("+json.toJSONString()+")";
     }
     //查询,分页
     @RequestMapping(value="/selectFacility")
-    public String selectFacility(String callback,Integer pageStart,Integer pageSize) {
+    public String selectFacility(Integer pageStart,Integer pageSize) {
         List<Facilityinformation> list=facilityinformationService.selectFacility(pageStart,pageSize);
         String json= JSONObject.toJSONString(list);
-        return callback +json;
+        return json;
     }
     //根据id删除
     @RequestMapping(value="/deleteFacility")
-    public String deleteFacility(Integer facilityId, String callback){
+    public String deleteFacility(Integer facilityId){
         String str=facilityinformationService.deleteFacility(facilityId);
-        return callback +str;
+        JSONObject json = new JSONObject();
+        json.put("str", str);
+        return "successCallBack("+json.toJSONString()+")";
     }
 }

@@ -35,22 +35,24 @@ public class FilenfoController {
     FilenfoService filenfoService;
     //新增
     @RequestMapping(value="/saveFilenfo")
-    public String saveFilenfo(Filenfo filenfo, String callback){
+    public String saveFilenfo(Filenfo filenfo){
         String str=filenfoService.saveFilenfo(filenfo);
-        return callback +str;
+        JSONObject json = new JSONObject();
+        json.put("str", str);
+        return "successCallBack("+json.toJSONString()+")";
     }
     //查询,分页
     @RequestMapping(value="/selectFilenfo")
-    public String selectFilenfo(String callback,Integer pageStart,Integer pageSize) {
+    public String selectFilenfo(Integer pageStart,Integer pageSize) {
         List<Filenfo> list=filenfoService.selectFilenfo(pageStart,pageSize);
         String json= JSONObject.toJSONStringWithDateFormat(list,"yyyy-MM-dd");
-        return callback +json;
+        return json;
     }
     //根据id删除
     @RequestMapping(value="/deleteFilenfo")
-    public String deleteFilenfo(Integer fileId, String callback){
+    public String deleteFilenfo(Integer fileId){
         String str=filenfoService.deleteFilenfo(fileId);
-        return callback +str;
+        return JSONObject.toJSONString("successCallBack("+str+")");
     }
 
 }

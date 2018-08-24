@@ -46,6 +46,7 @@ public class TestController {
         String fileName = file.getOriginalFilename();
         try {
             FileUtil.uploadFile(file.getBytes(), fileName);
+            //FileUtil.uploadFile2(file, fileName);
             //返回json
             return callback+fileName;
         } catch (Exception e) {
@@ -54,7 +55,7 @@ public class TestController {
     }
     //查询列表时图片显示<img src=""/>
     /**
-     * 显示二维码图片
+     * 显示图片
      * @param
      * @param
      * @return

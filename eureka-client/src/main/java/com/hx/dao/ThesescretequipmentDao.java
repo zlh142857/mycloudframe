@@ -29,9 +29,9 @@ import java.util.List;
  */
 @Transactional
 public interface ThesescretequipmentDao extends CrudRepository<Thesescretequipment,Integer> {
-    @Query(value="SELECT * FROM thesescretequipment LIMIT :pageStart,:pageSize",nativeQuery = true)
+    @Query(value="SELECT * FROM thesecretequipment LIMIT :pageStart,:pageSize",nativeQuery = true)
     List<Thesescretequipment> selectThesescretequipment(@Param("pageStart") Integer pageStart,@Param("pageSize") Integer pageSize);
     @Modifying
-    @Query(value="DELETE FROM thesescretequipment WHERE Course_Id=:courseId",nativeQuery = true)
+    @Query(value="DELETE FROM thesecretequipment WHERE Thesecret_Id=:courseId",nativeQuery = true)
     Integer deleteThesescretequipment(@Param("courseId")Integer courseId);
 }

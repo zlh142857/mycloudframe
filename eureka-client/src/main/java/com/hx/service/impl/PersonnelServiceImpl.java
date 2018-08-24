@@ -33,12 +33,12 @@ public class PersonnelServiceImpl implements PersonnelService {
         try {
             Integer count=personnelDao.deletePersonner(userId);
             if(count != 0){
-                return "删除成功";
+                return "success";
             }
         }catch (Exception e){
-            System.out.println("删除失败");
+            System.out.println("fail");
         }
-        return "删除失败";
+        return "fail";
     }
 
     @Override

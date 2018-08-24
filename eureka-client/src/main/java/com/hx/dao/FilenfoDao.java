@@ -29,9 +29,9 @@ import java.util.List;
  */
 @Transactional
 public interface FilenfoDao extends CrudRepository<Filenfo,Integer> {
-    @Query(value="SELECT * FROM filenfo LIMIT :pageStart,:pageSize",nativeQuery = true)
+    @Query(value="SELECT * FROM fileinfo LIMIT :pageStart,:pageSize",nativeQuery = true)
     List<Filenfo> selectFilenfo(@Param("pageStart") Integer pageStart,@Param("pageSize") Integer pageSize);
     @Modifying
-    @Query(value="DELETE FROM filenfo WHERE File_Id=:fileId",nativeQuery = true)
+    @Query(value="DELETE FROM fileinfo WHERE File_Id=:fileId",nativeQuery = true)
     Integer deleteFilenfo(@Param("fileId")Integer fileId);
 }

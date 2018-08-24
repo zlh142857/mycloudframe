@@ -8,7 +8,7 @@ import java.util.Date;
 
 /*培训课程管理表*/
 @Entity
-@Table(name="tariningcourse")
+@Table(name="trainingcourse")
 public class Tariningcourse implements Serializable {
 
     private static final long serialVersionUID = 6822796671713369272L;
@@ -18,16 +18,14 @@ public class Tariningcourse implements Serializable {
     private Integer courseId;  //序号
     @Column(name="Course_Name")
     private String courseName; //应用网络
-    @Column(name="Course_Duration")
-    @DateTimeFormat(style = "yyyy/MM/dd HH:mm:ss")
-    private Date courseDurationt; //课程时长
+
     @Column(name="Course_Site")
     private String courseSite; //课程场地
     @Column(name="Course_Lecturer")
     private String courseLecturer;  //讲师
     @Column(name="Course_Remark")
     private String courseRemark;  //备注
-    @Transient
+    @Column(name="Course_Duration")
     private String courseDuration; //课程时长
 
     public Integer getCourseId() {
@@ -46,13 +44,7 @@ public class Tariningcourse implements Serializable {
         this.courseName = courseName;
     }
 
-    public Date getCourseDurationt() {
-        return courseDurationt;
-    }
 
-    public void setCourseDurationt(Date courseDurationt) {
-        this.courseDurationt = courseDurationt;
-    }
 
     public String getCourseSite() {
         return courseSite;
@@ -91,7 +83,6 @@ public class Tariningcourse implements Serializable {
         return "Tariningcourse{" +
                 "courseId=" + courseId +
                 ", courseName='" + courseName + '\'' +
-                ", courseDurationt=" + courseDurationt +
                 ", courseSite='" + courseSite + '\'' +
                 ", courseLecturer='" + courseLecturer + '\'' +
                 ", courseRemark='" + courseRemark + '\'' +

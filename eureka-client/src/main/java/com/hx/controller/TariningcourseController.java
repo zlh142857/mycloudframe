@@ -35,21 +35,25 @@ public class TariningcourseController {
     TariningcourseService tariningcourseService;
     //新增
     @RequestMapping(value="/saveTariningcourse")
-    public String saveTariningcourse(Tariningcourse tariningcourse, String callback){
+    public String saveTariningcourse(Tariningcourse tariningcourse){
         String str=tariningcourseService.saveTariningcourse(tariningcourse);
-        return callback +str;
+        JSONObject json = new JSONObject();
+        json.put("str", str);
+        return "successCallBack("+json.toJSONString()+")";
     }
     //查询,分页
     @RequestMapping(value="/selectTariningcourse")
-    public String selectTariningcourse(String callback,Integer pageStart,Integer pageSize) {
+    public String selectTariningcourse(Integer pageStart,Integer pageSize) {
         List<Tariningcourse> list=tariningcourseService.selectTariningcourse(pageStart,pageSize);
         String json= JSONObject.toJSONStringWithDateFormat(list,"yyyy-MM-dd");
-        return callback +json;
+        return json;
     }
     //根据id删除
     @RequestMapping(value="/deleteTariningcourse")
-    public String deleteTariningcourse(Integer courseId, String callback){
+    public String deleteTariningcourse(Integer courseId){
         String str=tariningcourseService.deleteTariningcourse(courseId);
-        return callback +str;
+        JSONObject json = new JSONObject();
+        json.put("str", str);
+        return "successCallBack("+json.toJSONString()+")";
     }
 }

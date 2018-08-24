@@ -35,21 +35,25 @@ public class ThesescretequipmentController {
     ThesescretequipmentService thesescretequipmentService;
     //新增
     @RequestMapping(value="/saveThesescretequipment")
-    public String saveThesescretequipment(Thesescretequipment tariningcourse, String callback){
+    public String saveThesescretequipment(Thesescretequipment tariningcourse){
         String str=thesescretequipmentService.saveThesescretequipment(tariningcourse);
-        return callback +str;
+        JSONObject json = new JSONObject();
+        json.put("str", str);
+        return "successCallBack("+json.toJSONString()+")";
     }
     //查询,分页
     @RequestMapping(value="/selectThesescretequipment")
-    public String selectThesescretequipment(String callback,Integer pageStart,Integer pageSize) {
+    public String selectThesescretequipment(Integer pageStart,Integer pageSize) {
         List<Thesescretequipment> list=thesescretequipmentService.selectThesescretequipment(pageStart,pageSize);
         String json= JSONObject.toJSONString(list);
-        return callback +json;
+        return json;
     }
     //根据id删除
     @RequestMapping(value="/deleteThesescretequipment")
-    public String deleteThesescretequipment(Integer courseId, String callback){
+    public String deleteThesescretequipment(Integer courseId){
         String str=thesescretequipmentService.deleteThesescretequipment(courseId);
-        return callback +str;
+        JSONObject json = new JSONObject();
+        json.put("str", str);
+        return "successCallBack("+json.toJSONString()+")";
     }
 }

@@ -14,13 +14,13 @@ public class Facilityinformation implements Serializable {
     @GeneratedValue(strategy = GenerationType.IDENTITY) //主键生成策略
     @Column(name="Facility_Id")
     private Integer facilityId;  //序号
-    @Column(name="Facility_ApplicationNetwork")
+    @Column(name="Facility_Applicationnetwork")
     private String facilityApplicationnetwork; //应用网络
-    @Column(name="Exit_Name")
+    @Column(name="Facility_Name")
     private String facilityName;  //设备名
     @Column(name="Facility_Amount")
     private Integer facilityAmount;  //数量
-    @Column(name="Facility_DeviceLocation")
+    @Column(name="Facility_Devicelocation")
     private String facilityDevicelocation;  //设备位置
     @Column(name="Facility_Accessory")
     private String facilityAccessory;  //附件

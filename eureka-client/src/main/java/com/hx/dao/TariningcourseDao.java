@@ -29,9 +29,9 @@ import java.util.List;
  */
 @Transactional
 public interface TariningcourseDao extends CrudRepository<Tariningcourse,Integer> {
-    @Query(value="SELECT * FROM tariningcourse LIMIT :pageStart,:pageSize",nativeQuery = true)
+    @Query(value="SELECT * FROM trainingcourse LIMIT :pageStart,:pageSize",nativeQuery = true)
     List<Tariningcourse> selectTariningcourse(@Param("pageStart") Integer pageStart,@Param("pageSize") Integer pageSize);
     @Modifying
-    @Query(value="DELETE FROM tariningcourse WHERE Course_Id=:courseId",nativeQuery = true)
+    @Query(value="DELETE FROM trainingcourse WHERE Course_Id=:courseId",nativeQuery = true)
     Integer deleteTariningcourse(@Param("courseId") Integer courseId);
 }

@@ -20,18 +20,18 @@ public class Outbound implements Serializable {
     private String exitName; //姓名
     @Column(name="Exit_Section")  //部门
     private String exitSection;
-    @Column(name="Exit_ToTheCountry")
+    @Column(name="Exit_Tothecountry")
     private String exitTothecountry;//去往国家
     @Column(name="Exit_Reasons")
     private String exitReasons;  //事由
-    @Column(name="Exit_WhetherClassified")
+    @Column(name="Exit_Whetherclassified")
     private String exitWhetherclassified;  //是否涉密
-    @Column(name="Exit_ApprovalFlow")
+    @Column(name="Exit_Approvalflow")
     private String exitApprovalflow;  //审核
-    @Column(name="Exit_TogoabroadToDate")
+    @Column(name="Exit_Togoabroadtodate")
     @DateTimeFormat(style = "yyyy/MM/dd")
     private Date exitTogoabroadtodatet;  //出国日期
-    @Column(name="Exit_ReturnDate")
+    @Column(name="Exit_Returndate")
     @DateTimeFormat(style = "yyyy/MM/dd")
     private Date exitReturndatet;  //回国日期
     @Transient

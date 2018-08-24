@@ -35,21 +35,25 @@ public class OutboundController {
     OutboundService outboundService;
     //新增
     @RequestMapping(value="/saveOutbound")
-    public String saveOutbound(Outbound outbound, String callback){
+    public String saveOutbound(Outbound outbound){
         String str=outboundService.saveOutbound(outbound);
-        return callback +str;
+        JSONObject json = new JSONObject();
+        json.put("str", str);
+        return "successCallBack("+json.toJSONString()+")";
     }
     //查询,分页
     @RequestMapping(value="/selectOutbound")
-    public String selectOutbound(String callback,Integer pageStart,Integer pageSize) {
+    public String selectOutbound(Integer pageStart,Integer pageSize) {
         List<Outbound> list=outboundService.selectOutbound(pageStart,pageSize);
         String json= JSONObject.toJSONStringWithDateFormat(list,"yyyy-MM-dd");
-        return callback +json;
+        return json;
     }
     //根据id删除
     @RequestMapping(value="/deleteOutbound")
-    public String deleteOutbound(Integer exitId, String callback){
+    public String deleteOutbound(Integer exitId){
         String str=outboundService.deleteOutbound(exitId);
-        return callback +str;
+        JSONObject json = new JSONObject();
+        json.put("str", str);
+        return "successCallBack("+json.toJSONString()+")";
     }
 }

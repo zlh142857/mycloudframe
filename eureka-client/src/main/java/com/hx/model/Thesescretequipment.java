@@ -6,25 +6,25 @@ import java.io.Serializable;
 
 /*非密设备移交表*/
 @Entity
-@Table(name="thesescretequipment")
+@Table(name="thesecretequipment")
 public class Thesescretequipment implements Serializable {
 
     private static final long serialVersionUID = -4443750562578065954L;
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY) //主键生成策略
-    @Column(name="Course_Id")
+    @Column(name="Thesecret_Id")
     private Integer courseId;  //序号
-    @Column(name="Course_ApplicationNetwork")
+    @Column(name="Thesecret_Applicationnetwork")
     private String courseApplicationnetwork; //应用网络
-    @Column(name="Course_Name")
+    @Column(name="Thesecret_Name")
     private String courseName; //设备名
-    @Column(name="Course_Amount")
+    @Column(name="Thesecret_Amount")
     private Integer courseAmount;  //数量
-    @Column(name="Course_Devicelocation")
+    @Column(name="Thesecret_Devicelocation")
     private String courseDevicelocation;  //设备位置
-    @Column(name="Course_Accessory")
+    @Column(name="Thesecret_Accessory")
     private String courseAccessory;  //附件
-    @Column(name="Course_Remark")
+    @Column(name="Thesecret_Remark")
     private String courseRemark;  //备注
 
     public Integer getCourseId() {

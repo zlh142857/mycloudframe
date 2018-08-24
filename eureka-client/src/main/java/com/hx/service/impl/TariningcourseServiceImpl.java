@@ -39,9 +39,6 @@ public class TariningcourseServiceImpl implements TariningcourseService{
     @Override
     public String saveTariningcourse(Tariningcourse tariningcourse) {
         try{
-            SimpleDateFormat sdf=new SimpleDateFormat("yyyy/MM/dd HH:mm:ss");
-            Date dura=sdf.parse(tariningcourse.getCourseDuration());
-            tariningcourse.setCourseDurationt(dura);
             if(tariningcourse != null){
                 Tariningcourse tar=tariningcourseDao.save(tariningcourse);
                 if(tar != null){
