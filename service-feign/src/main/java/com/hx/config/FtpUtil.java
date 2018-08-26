@@ -10,13 +10,13 @@ import java.net.SocketException;
 
 public class FtpUtil {
     //ftp服务器地址
-    public static String hostname = "172.16.107.114";
+    public static String hostname = "192.168.153.129";
     //ftp服务器端口号默认为21
     public static Integer port = 21 ;
     //ftp登录账号
     public static String username = "root";
     //ftp登录密码
-    public static String password = "huixiang";
+    public static String password = "zlh";
 
     public static FTPClient ftpClient = null;
     /**
