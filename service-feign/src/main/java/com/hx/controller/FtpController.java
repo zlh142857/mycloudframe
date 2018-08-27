@@ -14,8 +14,8 @@ public class FtpController {
     @RequestMapping("/testUpload")
     public void testUpload(){
         FtpUtil ftp =new FtpUtil();
-        ftp.uploadFile("/uploadimage","123.docx","D:\\需求文档模板.docx");
-        //ftp.downloadFile("/uploadimage","需求文档模板.docx","D:\\我的软件2");
+        //ftp.uploadFile("\\uploadimage","123.docx","D:\\需求文档模板.docx");
+        ftp.downloadFile("\\uploadimage","123.docx","D:\\我的软件2");
     }
     /*public static void testUpload() {*/
     /*    FTPClient ftpClient = new FTPClient();

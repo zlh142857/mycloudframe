@@ -26,14 +26,14 @@ public class FtpUtil {
         ftpClient = new FTPClient();
         ftpClient.setControlEncoding("utf-8");
         try {
-            System.out.println("connecting...ftp服务器:"+hostname+":"+port);
-            ftpClient.connect(hostname, port); //连接ftp服务器
+            System.out.println("connecting...ftp服务器:"+hostname);
+            ftpClient.connect(hostname); //连接ftp服务器
             ftpClient.login(username, password); //登录ftp服务器
             int replyCode = ftpClient.getReplyCode(); //是否成功登录服务器
             if(!FTPReply.isPositiveCompletion(replyCode)){
-                System.out.println("connect failed...ftp服务器:"+hostname+":"+port);
+                System.out.println("connect failed...ftp服务器:"+hostname);
             }
-            System.out.println("connect successfu...ftp服务器:"+hostname+":"+port);
+            System.out.println("connect successfu...ftp服务器:"+hostname);
         }catch (MalformedURLException e) {
             e.printStackTrace();
         }catch (IOException e) {
@@ -56,9 +56,9 @@ public class FtpUtil {
             inputStream = new FileInputStream(new File(originfilename));
             initFtpClient();
             ftpClient.setFileType(ftpClient.BINARY_FILE_TYPE);
-            CreateDirecroty(pathname);
-            ftpClient.makeDirectory(pathname);
-            ftpClient.changeWorkingDirectory(pathname);
+            //CreateDirecroty(pathname);
+            //ftpClient.makeDirectory(pathname);
+            //ftpClient.changeWorkingDirectory(pathname);
             ftpClient.storeFile(fileName, inputStream);
             inputStream.close();
             ftpClient.logout();
@@ -98,9 +98,9 @@ public class FtpUtil {
             System.out.println("开始上传文件");
             initFtpClient();
             ftpClient.setFileType(ftpClient.BINARY_FILE_TYPE);
-            CreateDirecroty(pathname);
-            ftpClient.makeDirectory(pathname);
-            ftpClient.changeWorkingDirectory(pathname);
+            //CreateDirecroty(pathname);
+            //ftpClient.makeDirectory(pathname);
+            //ftpClient.changeWorkingDirectory(pathname);
             ftpClient.storeFile(fileName, inputStream);
             inputStream.close();
             ftpClient.logout();

@@ -82,6 +82,18 @@
             <artifactId>commons-net</artifactId>
             <version>1.4.1</version>
         </dependency>
+        <dependency>
+            <groupId>org.apache.poi</groupId>
+            <artifactId>poi-ooxml</artifactId>
+            <version>3.11</version>
+        </dependency>
+        <!--pdf-->
+        <dependency>
+            <groupId>fr.opensagres.xdocreport</groupId>
+            <artifactId>org.apache.poi.xwpf.converter.pdf</artifactId>
+            <version>1.0.4</version>
+        </dependency>
+
 
 
     </dependencies>
