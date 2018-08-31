@@ -1,21 +1,47 @@
 package com.hx.controller;
 
+import com.alibaba.fastjson.JSONObject;
 import com.hx.config.FtpUtil;
 import org.apache.commons.net.ftp.FTPClient;
 import org.apache.tomcat.util.http.fileupload.IOUtils;
 import org.springframework.web.bind.annotation.RequestMapping;
+import org.springframework.web.bind.annotation.RequestParam;
 import org.springframework.web.bind.annotation.RestController;
+import org.springframework.web.multipart.MultipartFile;
 
+import javax.servlet.http.HttpServletRequest;
 import java.io.FileInputStream;
 import java.io.FileOutputStream;
 import java.io.IOException;
+import java.io.InputStream;
+
 @RestController
 public class FtpController {
     @RequestMapping("/testUpload")
-    public void testUpload(){
-        FtpUtil ftp =new FtpUtil();
-        //ftp.uploadFile("\\uploadimage","123.docx","D:\\需求文档模板.docx");
-        ftp.downloadFile("\\uploadimage","123.docx","D:\\我的软件2");
+    public String testUpload(@RequestParam("file") MultipartFile file,
+                           HttpServletRequest request){
+        if(file.isEmpty()){
+            JSONObject json = new JSONObject();
+            String str="file为空";
+            json.put("str", str);
+            return "successCallBack("+json.toJSONString()+")";
+        }else{
+            try {
+                InputStream infile=file.getInputStream();
+                FtpUtil ftp =new FtpUtil();
+                /*ftp.uploadFile2("\\uploadimage","123.pdf",infile);*/
+                ftp.downloadFile("\\uploadimage","123.pdf","D:\\我的软件2");
+            } catch (IOException e) {
+                e.printStackTrace();
+                return "获取inputstream出错";
+            }
+            JSONObject json = new JSONObject();
+            String str="下载PDF文件成功";
+            json.put("str", str);
+            return "successCallBack("+json.toJSONString()+")";
+        }
+
+
     }
     /*public static void testUpload() {*/
     /*    FTPClient ftpClient = new FTPClient();
