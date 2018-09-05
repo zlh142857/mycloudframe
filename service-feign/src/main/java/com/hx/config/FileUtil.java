@@ -36,7 +36,7 @@ import java.io.*;
  */
 public class FileUtil {
     public static String uploadFile(byte[] file, String fileName) throws Exception {
-        String filePath="D:\\";///usr/uploadImage
+        String filePath="\\usr\\uploadImage\\";///usr/uploadImage
         FileOutputStream out = new FileOutputStream(filePath+fileName);
         out.write(file);
         out.flush();
