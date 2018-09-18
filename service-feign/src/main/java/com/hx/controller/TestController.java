@@ -66,7 +66,7 @@ public class TestController {
         InputStream inputStream = null;
         OutputStream writer = null;
         try {
-            inputStream = new FileInputStream(new File("D:\\imageTest\\"+filename));
+            inputStream = new FileInputStream(new File("D:\\"+filename));
                     writer = response.getOutputStream();
 
             byte[] buf = new byte[1024];

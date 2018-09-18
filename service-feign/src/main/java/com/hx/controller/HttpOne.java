@@ -28,13 +28,9 @@ public class HttpOne {
         //创建HttpClient对象
         CloseableHttpClient client = HttpClients.createDefault();
         //接收文件的路径
-        HttpPost post = new HttpPost("http://172.16.107.114:8080/httpclienttofile_war/httptwo.do");
-        RequestConfig requestConfig = RequestConfig.custom().setSocketTimeout(20000).setConnectTimeout(20000).build();//设置请求和传输超时时间
+        HttpPost post = new HttpPost("http://172.16.107.114:8080/httpclienttofile/httptwo.do");//httpclienttofile_war  http://172.16.107.205:8080/httptwo.do
+        RequestConfig requestConfig = RequestConfig.custom().setSocketTimeout(50000).setConnectTimeout(50000).build();//设置请求和传输超时时间
         post.setConfig(requestConfig);
-        //post.addHeader("Accept-Charset", "GB2312,utf-8;q=0.7,*;q=0.7");
-        //post.addHeader("Host", "80");
-        //post.addHeader("Accept", "Accept text/html,application/xhtml+xml,application/xml;q=0.9,*/*;q=0.8");
-        //post.addHeader("User-Agent", "Mozilla/4.0 (compatible; MSIE 6.0; Windows NT 5.1; SV1; QQDownload 1.7; .NET CLR 1.1.4322; CIBA; .NET CLR 2.0.50727)");
         String fileName = file.getOriginalFilename();
         InputStream inputStream=null;
         try {
